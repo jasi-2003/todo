@@ -30,4 +30,4 @@ class Taskform(forms.ModelForm):
 
         model = Taskmodel
 
-        fields = ["task_name"]
+        fields = ["task_name","due_data","priority_level"]

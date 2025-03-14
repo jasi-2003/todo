@@ -222,3 +222,30 @@ class singout(View):
         logout(request)
 
         return redirect("login")
+
+
+class CompletedView(View):
+
+    def get(self,request):
+
+        data = Taskmodel.objects.filter(user_id= request.user,is_completed=True)
+
+        return render(request,"complete.html",{"data":data})
+
+
+class Userdetails(View):
+
+    def get(self,request):
+
+        data = Taskmodel.objects.filter(user_id = request.user )
+
+        total = Taskmodel.objects.filter(user_id = request.user).count()
+
+        incompleted = Taskmodel.objects.filter(user_id = request.user,is_completed = False ).count()
+
+        completed = total - incompleted
+
+        return render(request,"userdetails.html",{"total":total,"incompleted":incompleted,"completed" : completed,"data":data})
+
+
+    

@@ -109,6 +109,8 @@
                     <th>Created Date</th>
                     <th>E-mail </th>
                     <th>Status</th>
+                    <th>Due Date </th>
+                    <th>Priority Level </th>
                     
                 </tr>
             </thead>
@@ -120,6 +122,8 @@
                     <td>{{ data.created_date }}</td>
                     <td>{{data.user_id.email}}</td>
                     <td>{{ data.is_completed|yesno:"Completed,Not Completed" }}</td>
+                    <td>{{data.due_data}}</td>
+                    <td>{{data.priority_level}}</td>
 
                 </tr>
             </tbody>

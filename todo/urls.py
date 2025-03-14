@@ -29,4 +29,6 @@ urlpatterns = [
     path('taskdetail/<int:pk>',views.TaskDetail.as_view(),name = "detail"),
     path('taskedit/<int:pk>',views.Taskedit.as_view(),name = 'edit'),
     path('logout/',views.singout.as_view(),name = "logout"),
+    path('complete/',views.CompletedView.as_view(),name = "complete"),
+    path('userdetails/',views.Userdetails.as_view()),
 ]
